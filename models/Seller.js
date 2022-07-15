@@ -14,10 +14,10 @@ const sellerSchema = new mongoose.Schema({
     location: String,
     links: [String],
     brand: String,
-    commands: [{ type: ObjectId, ref: 'command' }],
-    products: [{ type: ObjectId, ref: 'product' }]
+    commands: [{ type: mongoose.Types.ObjectId, ref: 'commands' }],
+    products: [{ type: mongoose.Types.ObjectId, ref: 'products' }]
 })
 
-const Seller = mongoose.models.seller || mongoose.model('sellers', sellerSchema)
+const Seller = mongoose.models.sellers || mongoose.model('sellers', sellerSchema)
 
 module.exports = Seller

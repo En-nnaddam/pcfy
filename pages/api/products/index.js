@@ -1,4 +1,4 @@
-import Database from "../../../db/databse"
+import Database from "../../../db/Database"
 import RequestHandler from "../../../helpers/RequestsHandler"
 import Product from "../../../models/Porduct"
 

@@ -18,7 +18,7 @@ export default class RequestHandler {
         }
     }
 
-    static async withoutIdParams(req, res, Obj) {
+    static async withIdParams(req, res, Obj) {
         const { id } = req.query
 
         try {
@@ -28,7 +28,7 @@ export default class RequestHandler {
 
                     return res.json({ data: object })
                 case 'PUT':
-                    const updated = await Product.findByIdAndUpdate(id, req.body, { new: true })
+                    const updated = await Obj.findByIdAndUpdate(id, req.body, { new: true })
 
                     return res.json({ data: updated })
                 case "DELETE":
